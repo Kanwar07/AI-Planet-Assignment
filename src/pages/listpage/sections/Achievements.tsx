@@ -5,7 +5,7 @@ import aichallenge from "../../../assets/icons/Group 1000002518.svg";
 
 function Achievements() {
   return (
-    <section className="flex flex-row justify-between items-center px-[10%] bg-[#002A3B] text-[#ffffff] text-[16px] font-medium py-8 max-md:flex-col max-md:items-start max-md:gap-8 max-md:py-16">
+    <section className="flex flex-row justify-between items-center px-[10%] bg-[#002A3B] text-[#ffffff] text-[16px] font-poppins font-medium py-8 max-md:flex-col max-md:items-start max-md:gap-8 max-md:py-16">
       <div className="flex flex-row gap-4">
         <img src={aimodel} alt="aimodel" />
         <div className="flex flex-col">

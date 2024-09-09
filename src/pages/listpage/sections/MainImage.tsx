@@ -3,7 +3,7 @@ import rocket from "../../../assets/icons/PicsArt_04-14-04.42 1.svg";
 function MainImage() {
   return (
     <>
-      <section className="flex flex-row items-center justify-between bg-[#003145] px-[10%] py-10 text-[#ffffff] text-poppins">
+      <section className="flex flex-row items-center justify-between bg-[#003145] px-[10%] py-10 text-[#ffffff] font-poppins">
         <div className="flex flex-row items-center">
           <div className="flex flex-row items-start mr-8 max-lg:mr-0">
             <span className="h-28 mt-4 w-4 bg-[#FFCE5C] mr-10 max-[1200px]:h-48 max-[1110px]:h-64 max-lg:h-28 max-[792px]:h-48 max-[655px]:h-64 max-[450px]:h-80"></span>
