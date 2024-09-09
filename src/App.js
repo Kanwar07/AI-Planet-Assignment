@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  Route,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+import Layout from "./Layout.tsx";
+import { Context } from "./context/Context.tsx";
+import ListPage from "./pages/listpage/ListPage.tsx";
 
 function App() {
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<Layout />}>
+        <Route index element={<ListPage />} />
+      </Route>
+    )
+  );
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Context>
+      <Toaster position="bottom-center" toastOptions={{ duration: 2000 }} />
+      <RouterProvider router={router} />
+    </Context>
   );
 }
 
