@@ -9,6 +9,7 @@ import Layout from "./Layout.tsx";
 import { Context } from "./context/Context.tsx";
 import ListPage from "./pages/listpage/ListPage.tsx";
 import DetailPage from "./pages/detailpage/DetailPage.tsx";
+import CreateHackathon from "./pages/createpage/CreateHackathon.tsx";
 
 function App() {
   const router = createBrowserRouter(
@@ -16,6 +17,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<ListPage />} />
         <Route path="detail" element={<DetailPage />} />
+        <Route path="create" element={<CreateHackathon />} />
       </Route>
     )
   );

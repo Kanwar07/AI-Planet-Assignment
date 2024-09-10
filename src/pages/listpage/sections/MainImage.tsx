@@ -1,5 +1,6 @@
 import React from "react";
 import rocket from "../../../assets/icons/PicsArt_04-14-04.42 1.svg";
+import { Link } from "react-router-dom";
 function MainImage() {
   return (
     <>
@@ -17,9 +18,12 @@ function MainImage() {
                 diverse datasets allowing you to foster learning through
                 competitions.
               </p>
-              <button className="text-[#003145] font-semibold text-[18px] bg-[#ffffff] px-4 py-1 rounded-[10px]">
+              <Link
+                to="/create"
+                className="text-[#003145] font-semibold text-[18px] bg-[#ffffff] px-4 py-1 rounded-[10px]"
+              >
                 Create Challenge
-              </button>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,10 +1,13 @@
 import React from "react";
 import logo from "../assets/icons/logo.svg";
+import { Link } from "react-router-dom";
 function Navbar() {
   return (
-    <div className="px-[10%] pb-4 cursor-pointer">
-      <img src={logo} alt="logo" />
-    </div>
+    <Link to="/">
+      <div className="px-[10%] py-4 cursor-pointer">
+        <img src={logo} alt="logo" />
+      </div>
+    </Link>
   );
 }
 
