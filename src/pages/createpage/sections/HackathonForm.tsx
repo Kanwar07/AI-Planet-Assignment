@@ -123,8 +123,8 @@ function HackathonForm() {
           onChange={(event) => setLevel(event.target.value)}
         >
           <option value="Easy">Easy</option>
-          <option value="Intermediate">Intermediate</option>
-          <option value="Advanced">Advanced</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
         </select>
       </div>
       <button className="text-[16px] font-inter font-medium px-5 py-2 w-fit bg-[#44924C] rounded-[10px] text-[#ffffff]">
