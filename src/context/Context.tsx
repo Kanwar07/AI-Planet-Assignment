@@ -128,6 +128,7 @@ export function Context({ children }: { children: React.ReactNode }) {
     <Contextdata.Provider
       value={{
         hackathonlist,
+        sethackathonlist,
         image,
         setImage,
         challengeName,

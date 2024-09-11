@@ -2,7 +2,14 @@ import React from "react";
 import tick from "../assets/icons/tick.svg";
 import { Link } from "react-router-dom";
 
-function HackathonCard({ hackathonName, hackathonStatus, color, imageURL }) {
+function HackathonCard({
+  id,
+  hackathonName,
+  hackathonStatus,
+  color,
+  imageURL,
+  skill,
+}) {
   return (
     <div className="bg-[#ffffff] rounded-2xl w-fit font-poppins flex flex-col items-center">
       <img src={imageURL} alt={hackathonName} />
@@ -35,6 +42,7 @@ function HackathonCard({ hackathonName, hackathonStatus, color, imageURL }) {
         <Link
           to="/detail"
           className="bg-[#44924C] px-5 py-2 rounded-[10px] flex flex-row items-center gap-3 text-[#ffffff] text-[14px] font-semibold"
+          state={{ id, hackathonName, hackathonStatus, imageURL, skill }}
         >
           <img src={tick} alt="tick" />
           Participate Now
