@@ -5,19 +5,20 @@ import { useContextdata } from "../../../context/Context.tsx";
 import cross from "../../../assets/icons/cross.svg";
 
 function Explore() {
-  const { filterList, setFilterList } = useContextdata();
+  const { filterList, setFilterList, searchinput, setsearchinput } =
+    useContextdata();
 
   const handleRemove = (item: string) => {
-    setFilterList(filterList.filter((listItem) => listItem !== item));
+    setFilterList(filterList.filter((search) => search !== item));
   };
 
   return (
-    <div className="px-[10%] pt-20 pb-28 font-poppins bg-[#002A3B] text-[#ffffff] flex flex-col gap-16">
+    <div className="px-[10%] pt-10 font-poppins bg-[#002A3B] text-[#ffffff] flex flex-col gap-16">
       <div className="w-full text-center text-[28px] font-semibold">
         Explore Challenges
       </div>
       <div className="flex flex-row items-center gap-8 max-sm:flex-col">
-        <SearchBar />
+        <SearchBar {...{ searchinput, setsearchinput }} />
         <FilterDropDown />
       </div>
       <div className="flex flex-wrap gap-4">

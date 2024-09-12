@@ -8,8 +8,16 @@ function Hackathons() {
     <div className="flex justify-center items-center px-[10%] py-20 bg-[#003145] w-full">
       <div className="grid grid-cols-3 gap-8 max-lg:grid-cols-2 max-sm:grid-cols-1">
         {hackathonlist.map((hackathon) => {
-          const { id, hackathonName, hackathonStatus, color, imageURL, skill } =
-            hackathon;
+          const {
+            id,
+            hackathonName,
+            hackathonStatus,
+            color,
+            imageURL,
+            skill,
+            description,
+          } = hackathon;
+
           return (
             <div key={id}>
               <HackathonCard
@@ -20,6 +28,7 @@ function Hackathons() {
                   color,
                   imageURL,
                   skill,
+                  description,
                 }}
               />
             </div>

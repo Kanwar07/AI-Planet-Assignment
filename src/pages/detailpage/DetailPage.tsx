@@ -8,13 +8,19 @@ function DetailPage() {
   }, []);
 
   const location = useLocation();
-  const { id, hackathonName, hackathonStatus, imageURL, skill } =
+  const { id, hackathonName, hackathonStatus, imageURL, skill, description } =
     location.state;
-  console.log(id);
   return (
     <>
       <HackathonDescription
-        {...{ id, hackathonName, hackathonStatus, imageURL, skill }}
+        {...{
+          id,
+          hackathonName,
+          hackathonStatus,
+          imageURL,
+          skill,
+          description,
+        }}
       />
     </>
   );

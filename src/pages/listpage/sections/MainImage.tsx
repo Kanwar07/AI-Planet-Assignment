@@ -20,7 +20,7 @@ function MainImage() {
               </p>
               <Link
                 to="/create"
-                className="text-[#003145] font-semibold text-[18px] bg-[#ffffff] px-4 py-1 rounded-[10px]"
+                className="text-[#003145] font-semibold text-[18px] bg-[#ffffff] px-4 py-1 rounded-[10px] hover:shadow-shadow"
               >
                 Create Challenge
               </Link>
