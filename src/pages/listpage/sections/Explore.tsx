@@ -3,6 +3,7 @@ import SearchBar from "../../../components/SearchBar.tsx";
 import FilterDropDown from "../../../components/FilterDropDown.tsx";
 import { useContextdata } from "../../../context/Context.tsx";
 import cross from "../../../assets/icons/cross.svg";
+import { motion } from "framer-motion";
 
 function Explore() {
   const { filterList, setFilterList, searchinput, setsearchinput } =
@@ -17,10 +18,18 @@ function Explore() {
       <div className="w-full text-center text-[28px] font-semibold">
         Explore Challenges
       </div>
-      <div className="flex flex-row items-center gap-8 max-sm:flex-col">
+      <motion.div
+        initial={{ scale: 0, opacity: 1 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
+        viewport={{
+          once: true,
+        }}
+        className="flex flex-row items-center gap-8 max-sm:flex-col"
+      >
         <SearchBar {...{ searchinput, setsearchinput }} />
         <FilterDropDown />
-      </div>
+      </motion.div>
       <div className="flex flex-wrap gap-4">
         {filterList.map((list, index) => {
           return (

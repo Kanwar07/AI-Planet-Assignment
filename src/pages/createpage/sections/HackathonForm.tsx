@@ -4,6 +4,7 @@ import arrowright from "../../../assets/icons/arrowright.svg";
 import challengeImage from "../../../assets/icons/bi_image-fill.svg";
 import { useContextdata } from "../../../context/Context.tsx";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function HackathonForm() {
   const {
@@ -68,7 +69,14 @@ function HackathonForm() {
   const today = new Date().toISOString().split("T")[0];
 
   return (
-    <form
+    <motion.form
+      initial={{ x: -50, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
+      whileInView="visible"
+      viewport={{
+        once: true,
+      }}
       className="px-[10%] w-[50%] py-10 flex flex-col gap-8 max-lg:w-[60%] max-md:w-[75%] max-sm:w-full"
       onSubmit={(event) => handleSubmit(event)}
     >
@@ -190,7 +198,7 @@ function HackathonForm() {
       <button className="text-[16px] font-inter font-medium px-5 py-2 w-fit bg-[#44924C] rounded-[10px] text-[#ffffff] hover:shadow-shadow">
         Create Challenge
       </button>
-    </form>
+    </motion.form>
   );
 }
 

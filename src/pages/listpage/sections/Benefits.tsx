@@ -4,6 +4,7 @@ import people from "../../../assets/icons/Vector.svg";
 import robot from "../../../assets/icons/Robot.svg";
 import IdentificationCard from "../../../assets/icons/IdentificationCard.svg";
 import BenefitCard from "../../../components/BenefitCard.tsx";
+import { motion } from "framer-motion";
 
 function Benefits() {
   const list = [
@@ -36,22 +37,65 @@ function Benefits() {
       imageURL: IdentificationCard,
     },
   ];
+
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 1.5,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
   return (
     <div className="px-[10%] py-20">
-      <div className="text-[32px] font-semibold font-poppins pb-10 w-full text-center">
+      <motion.div
+        initial={{ scale: 0, opacity: 1 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+        viewport={{
+          once: true,
+        }}
+        className="text-[32px] font-semibold font-poppins pb-10 w-full text-center"
+      >
         Why Participate in{" "}
         <span className="text-[#44924c]">AI Challenges?</span>
-      </div>
-      <div className="grid grid-cols-2 gap-8 max-md:grid-cols-1">
+      </motion.div>
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: true,
+        }}
+        className="grid grid-cols-2 gap-8 max-md:grid-cols-1"
+      >
         {list.map((item) => {
           const { id, title, description, imageURL } = item;
           return (
-            <div key={id}>
+            <motion.div variants={itemVariants} key={id}>
               <BenefitCard {...{ title, description, imageURL }} />
-            </div>
+            </motion.div>
           );
         })}
-      </div>
+      </motion.div>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useContextdata } from "../../../context/Context.tsx";
 import toast from "react-hot-toast";
+import { motion } from "framer-motion";
 
 function EditHackathonForm() {
   const { hackathonlist, setFullList } = useContextdata();
@@ -38,7 +39,16 @@ function EditHackathonForm() {
   };
 
   return (
-    <div className="px-[10%] w-[50%] py-10 flex flex-col gap-8 max-lg:w-[60%] max-md:w-[75%] max-sm:w-full">
+    <motion.div
+      initial={{ x: -50, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
+      whileInView="visible"
+      viewport={{
+        once: true,
+      }}
+      className="px-[10%] w-[50%] py-10 flex flex-col gap-8 max-lg:w-[60%] max-md:w-[75%] max-sm:w-full"
+    >
       <div className="flex flex-col gap-4">
         <span className="text-[16px] font-inter font-medium">
           Challenge Name
@@ -85,7 +95,7 @@ function EditHackathonForm() {
       >
         Update Challenge
       </button>
-    </div>
+    </motion.div>
   );
 }
 
